@@ -1,10 +1,11 @@
 # Landind Page Aparecida do Norte - Pagina de Turismo.
 
-  Este repositório contém o código de uma landing page desenvolvido como exemplo de design responsivo para criação de sites, templates e landing page.
+  Este repositório contém o código de uma landing page desenvolvido como um guia de design responsivo para criação de sites, templates e landing page.
 
 ## Tecnologias Utilizadas
 
-  ### ESTRUTURA HTML:
+  **ESTRUTURA HTML:**
+  
     ```
       <!DOCTYPE html>
     <html lang="pt-br">
@@ -138,58 +139,61 @@
 
 ---
 
-  #### CSS: Estilização e responsividade do layout.
+  ## **CSS: Estilização e responsividade do layout.**
 
   
-  Tipografia (fonte) utilizada :
+  __Tipografia (fonte) utilizada:__
   
-    /* font-family: "Playfair", serif;*/
+     font-family: "Playfair", serif;
 ---  
-  Ajusta a proporção da imagem para caber no container disponível pra ela sem distorcer.
+  __Ajusta a proporção da imagem para caber no container disponível pra ela sem distorcer.__
   
-          /* object-fit: cover ==> */
+    object-fit: cover;
 ---   
-   grid-template-columns ==> faz parte da especificação CSS Grid Layout. 
-   A função auto-fit ==> usa o espaço disponível e aceita um valor percentil como o tamanho máximo permitido para uma trilha de grade , garantindo que a trilha nunca ultrapasse e nunca diminua além de um mínimo.
+   __grid-template-columns ==> faz parte da especificação CSS Grid Layout.__
+   __A função auto-fit ==> usa o espaço disponível e aceita um valor percentil como o tamanho máximo permitido para uma trilha de grade , garantindo que a trilha nunca ultrapasse e nunca diminua além de um mínimo.__
    
-     /* grid-template-columns: repeat(auto-fit, minmax(600px, 2fr)); */ 
+      grid-template-columns: repeat(auto-fit, minmax(600px, 2fr)); 
      
-  ==>   Define que as colunas de um contêiner de grade possua o tamanho de 2 frames, especificando o tamanho das trilhas da grade e seus nomes de linha.
+ __==>Define que as colunas de um contêiner de grade possua o tamanho de 2 frames, especificando o tamanho das trilhas da grade e seus nomes de linha.__
 
 ---   
-   @media ==> especifica uma consulta de mídia e um bloco de CSS a ser aplicado ao documento se, e somente se, a consulta de mídia corresponder ao dispositivo no qual o conteúdo está sendo usado.
-   max-width ==> A propriedade max-width em CSS é usada para definir a largura máxima de um elemento especificado.
+   __@media ==> especifica uma consulta de mídia e um bloco de CSS a ser aplicado ao documento se, e somente se, a consulta de mídia corresponder ao dispositivo no qual o conteúdo está sendo usado.__
+   __max-width ==> A propriedade max-width em CSS é usada para definir a largura máxima de um elemento especificado.__
      
-     /* Responsive design 
+## **Responsive design**
+   
     @media (max-width: 768px) {
       .cabecalho h1 {
         font-size: 2rem;
-      }*/
+      }
 
 ---
-  A declaração CSS transform: translateY(-5px); ==> aplica uma transformação 2D a um elemento HTML, especificamente movendo-o verticalmente.
+  __A declaração CSS transform: translateY(-5px); ==> aplica uma transformação 2D a um elemento HTML, especificamente movendo-o verticalmente.__
 
-     /* .container:hover {
-        transform: translateY(-5px);*/
-
----
-  ==> Z-INDEX ==> é uma propriedade CSS que define a ordem de empilhamento de um elemento posicionado, como um "nível de pilha" ou profundidade no eixo Z.
-
-        /* .modal {
-         z-index: 1000; */
+      .container:hover {
+        transform: translateY(-5px);
 
 ---
-  Pseudoclasses Utilizadas: 
+  __==> Z-INDEX ==> é uma propriedade CSS que define a ordem de empilhamento de um elemento posicionado, como um "nível de pilha" ou profundidade no eixo Z.__
+
+     .modal {
+     z-index: 1000; 
+
+---
+## **Pseudoclasses Utilizadas:**
   
-  .close:hover ==> A pseudoclasse :hover em CSS seleciona elementos quando o cursor do mouse está sobre eles.
+  __.close:hover ==> A pseudoclasse :hover em CSS seleciona elementos quando o cursor do mouse está sobre eles.__
   
-  .close:focus {#} ===> A pseudoclasse :focus em CSS é usada para estilizar um elemento que está atualmente sendo alvo do mause ou ...
+  __.close:focus {#} ===> A pseudoclasse :focus em CSS é usada para estilizar um elemento que está atualmente sendo alvo do mause ou ...__
 
-    /* .close:hover, .close:focus {
-          color: rgb(255, 255, 255); }*/
-          
+     .close:hover, .close:focus {
+          color: rgb(255, 255, 255); }
 
-#### ESTRUTURA JAVA SCRIPT
+---          
+
+# ESTRUTURA JAVA SCRIPT
+      
       ```
         //* Modal functionality for image grid
         document.addEventListener("DOMContentLoaded", function () {
@@ -223,32 +227,34 @@
         })
     ```
 
-JavaScript configura a funcionalidade modal para uma grade de imagens, onde clicar em uma imagem dentro de um `.container` exibe uma versão maior em um pop-up modal com uma legenda.
-* Aguarda o carregamento do DOM antes de executar.
-* Obtém os elementos modal necessários.
-* Abre o modal e atualiza a imagem e a legenda ao clicar na imagem.
-* Fecha o modal ao clicar no botão de fechar (`.close`) ou fora do modal.
---
-Adiciona uma verificação da existência de elementos (opcional, mas mais seguro)**
-Se a estrutura da página mudar, isso evita erros:
+## **JavaScript configura a funcionalidade modal para uma grade de imagens, onde clicar em uma imagem dentro de um `.container` exibe uma versão maior em um pop-up modal com uma legenda.**
+
+  1. Aguarda o carregamento do DOM antes de executar.
+  2. Obtém os elementos modal necessários.
+  3. Abre o modal e atualiza a imagem e a legenda ao clicar na imagem.
+  4. Fecha o modal ao clicar no botão de fechar (`.close`) ou fora do modal.
+   
+---
+
+## **Adiciona uma verificação da existência de elementos (opcional, mas mais seguro)**
+  **Se a estrutura da página mudar, isso evita erros:**
 
       ```js
             if (!modal || !modalImg || !modalCaption || !closeBtn) return;```
 
 ---
 
-#### **Adiciona acessibilidade ao teclado ( exemplo: fechar com a tecla `Esc`:**
-
+ ## **Adiciona acessibilidade ao teclado ( exemplo: fechar com a tecla `Esc`:**
 
     ```js
     document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modal.style.display === "block") {
-    modal.style.display = "none";
-    }
+      if (event.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none";
+      }
     });
     ```
---
-Correspondendo a estrutura do HTML:
+---
+## **Correspondendo a estrutura do HTML:**
 
     ```html
     <div class="container">
@@ -266,100 +272,101 @@ Correspondendo a estrutura do HTML:
 
 ---
 
-### ✅ Lembrete
- CSS (para funcionalidade modal):
+## **✅Lembrete**
+    
+  **CSS (para funcionalidade modal)**
 
-Verificar se as classes modal e `.close` estão estilizadas corretamente:
+**Verificar se as classes modal e `.close` estão estilizadas corretamente:**
 
     ```css
     .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    }
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      }
     
     .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 80%;
-    }
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      }
     
     .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    }
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      }
     ```
 
-===================@++++++++++++++++++++++@=======================
-#### ** Aprimora o carregamento de imagens (aprimoramento opcional de UX):**
+---
+# **Aprimora o carregamento de imagens (aprimoramento opcional de UX):**
 
-###**Como adicionar um spinner de carregamento e um efeito de fade-in ao exibir uma imagem modal.**
+## **Como adicionar um spinner de carregamento e um efeito de fade-in ao exibir uma imagem modal.**
 
-Exibe um spinner enquanto a imagem está carregando.
-A imagem aparece gradualmente após o carregamento completo.
+      Exibe um spinner enquanto a imagem está carregando.
+      A imagem aparece gradualmente após o carregamento completo.
+    
+    🔧 1. Estrutura HTML
+    
+    Adicione um elemento de spinner de carregamento dentro do modal:
+    
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Spinner -->
+    <div class="spinner" id="spinner"></div>
+    
+    <!-- Image -->
+    <img id="modalImg" class="modal-content fade-in">
+    <div id="modalCaption"></div>
+    </div>
 
-🔧 1. Estrutura HTML
-
-Adicione um elemento de spinner de carregamento dentro do modal:
-
-<!-- Modal -->
-<div id="imageModal" class="modal">
-<span class="close">&times;</span>
-
-<!-- Spinner -->
-<div class="spinner" id="spinner"></div>
-
-<!-- Image -->
-<img id="modalImg" class="modal-content fade-in">
-<div id="modalCaption"></div>
-</div>
-
-🎨 2. Estilo CSS
+## **🎨 2. Estilo CSS**
 
       ````/* Estilo do spinner */
       .spinner {
-      border: 6px solid #f3f3f3;
-      border-top: 6px solid #555;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-      z-index: 1001;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #555;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        z-index: 1001;
       }
       
       @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-      }
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
       
       /* Efeito de fade-in para imagem */
-      .fade-in {
-      opacity: 0;
-      transition: opacity 0.5s ease-in;
-      }
+        .fade-in {
+          opacity: 0;
+          transition: opacity 0.5s ease-in;
+        }
       
       .fade-in.show {
-      opacidade: 1;
-      }
+        opacidade: 1;
+        }
       ````
 
-🧠 3. JavaScript atualizado
+## **🧠 3. JavaScript atualizado**
 
     ````
         document.addEventListener("DOMContentLoaded", function () {
@@ -414,8 +421,9 @@ Adicione um elemento de spinner de carregamento dentro do modal:
         });
     ````
 
-Etapas:
-O spinner é exibido durante o carregamento da imagem.
-modalImg.onload aguarda o carregamento da imagem, oculta o spinner e aciona um fade-in.
-.fade-in com .show usa transição de opacidade.
+## **Etapas:**
+
+  ### =>  O spinner é exibido durante o carregamento da imagem. 
+  ### =>  modalImg.onload aguarda o carregamento da imagem, oculta o spinner e aciona um fade-in. 
+  ### => .fade-in com .show usa transição de opacidade.
 
