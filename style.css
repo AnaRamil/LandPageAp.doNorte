@@ -1,0 +1,225 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box;*/
+  border-radius: 10px;
+  min-width: 760px;
+}
+
+body {
+  font-family: "Playfair", serif;
+  line-height: 1.2;
+  color: rgb(231, 231, 231);
+  background-color: rgb(179, 179, 179);
+}
+
+/* Header styles */
+.cabecalho {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgb(27, 27, 27);
+}
+
+.cabecalho h1 {
+  position: Responsive;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  background: rgb(54, 54, 54) 24px 24px;
+  border-radius: 4px;
+}
+
+.cabecalho h1:hover {
+  transform: translateY(-5px);
+  font-size: 3.1rem;
+}
+
+/* Background sections */
+.backimage-fundo1,
+.backimage-fundo2,
+.backimage-fundo3 {
+  margin-bottom: 1rem;
+}
+
+.backimage-fundo1 img,
+.backimage-fundo2 img,
+.backimage-fundo3 img {
+  width: 100%;
+  /*height: auto;*/
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  height: 375px;
+  object-fit: cover; /* Ajusta a proporção da imagem para caber no container disponível pra ela sem distorcer */
+  margin-top: 1rem;
+}
+
+/* Text content styles */
+p {
+  margin: 24px 8px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 8px 16px;
+  background: rgb(54, 54, 54) 16px 16px;
+  border-radius: 4px;
+  border-box: rgba(21, 21, 22, 1);
+}
+
+h2:hover {
+  transform: translateY(-5px);
+  font-size: 3.1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 8px 16px;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 2fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Container styles for images */
+.container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.container span {
+  display: block;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* List styles */
+ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+ul h3 {
+  margin: 16px 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cabecalho h1 {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 2fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .container img {
+    height: 200px;
+  }
+}
+
+/* Additional styles for specific sections */
+.body {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.body h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.grid a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+footer {
+  padding: 60px 60px;
+  text-align: center;
+  font-size: 24px;
+}
+
+footer:hover {
+  transform: translateY(-5px);
+  font-size: 1.8rem;
+}
+
+/*MODAL Styles*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px solid #fefefe;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+}
